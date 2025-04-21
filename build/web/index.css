@@ -1,0 +1,203 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    font-size: 28px;
+}
+
+h2 {
+    color: #007bff;
+    font-size: 22px;
+}
+
+button {
+    display: inline-block;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    
+    background-color: red !important;
+    color: white !important;
+    padding: 10px 16px!important;
+    border: none !important;
+    border-radius: 5px !important;
+    margin-top: 15px !important;
+    cursor: pointer !important;
+    font-size: 16px !important;
+}
+
+a {
+    background-color: red;
+    display: inline-block;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    
+    color: white !important;
+    padding: 10px 16px!important;
+    border: none !important;
+    border-radius: 5px !important;
+    margin-top: 15px !important;
+    cursor: pointer !important;
+    font-size: 16px !important;
+}
+
+a:hover {
+    background-color: #990000;
+}
+
+button, .Smallbutton {
+    background-color: #007bff;
+}
+
+button:hover, .Smallbutton:hover {
+    background-color: #0056b3;
+}
+
+.Smallbutton {
+    padding: 10px;
+    width: auto;
+}
+
+p, .actividades .opiniones {
+    font-size: 16px;
+    color: #555;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.contenedorForm {
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.buscador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 700px;
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.buscador input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.buscador input[type="text"]:focus {
+    border-color: #007bff;
+}
+
+.buscador button {
+    width: 175px;
+    margin-left: 10px;
+    background-color: lightblue;
+}
+
+.admin {
+    background-color: orange;
+}
+
+.admin:hover {
+    background-color: #cc6600;
+}
+
+.admin-content {
+    background-color: #ffcc00;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid black;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input {
+    width: 90%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.usuario {
+    font-weight: bold;
+    color: #2a7bb7;
+}
+
+.content{
+    margin:0; 
+    padding:20px; 
+    text-align:center;
+}
+
+.publicacion{
+    border: 1px solid #ccc; 
+    padding: 1em; 
+    margin: 1em 0;
+}
+
+.comentarios{
+    margin-left: 1em; 
+    padding-left: 1em; 
+    border-left: 2px solid #ddd;
+}
+
+#botonJuego{
+    padding: 15px 40px;
+    font-size: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+}
