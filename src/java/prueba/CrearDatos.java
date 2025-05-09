@@ -55,7 +55,7 @@ public class CrearDatos extends HttpServlet {
 
             // Publicación tipo informativa
             Publicacion pubInf = new Publicacion();
-            pubInf.setTitulo("Noticia");
+            pubInf.setTitulo("Las nuevas tecnologías");
             pubInf.setTipo(true); // true = informativa
             pubInf.setContenido("La importancia de las nuevas tecnologías enfocadas al desarrollo");
             pubInf.setRuta("");
@@ -65,17 +65,17 @@ public class CrearDatos extends HttpServlet {
 
             // Publicación tipo proyecto
             Publicacion pubPro = new Publicacion();
-            pubPro.setTitulo("Proyecto VR");
+            pubPro.setTitulo("CaramboloVR");
             pubPro.setTipo(false); // false = proyecto
             pubPro.setContenido("");
-            pubPro.setRuta("/proyectos/" + pubPro.getTitulo());
+            pubPro.setRuta("projects/CaramboloVR");
             pubPro.setFechaPublicacion(new Date());
             pubPro.setUsuario(creador);
             sp.create(pubPro);
 
             // Usuario 3: Comentarista sin publicaciones
             Usuario comentarista = new Usuario();
-            comentarista.setNombre("Comentarista");
+            comentarista.setNombre("Usuario que comenta");
             comentarista.setEmail("coment@gmail.com");
             comentarista.setPassword("4321");
             comentarista.setTipo("normal");
@@ -85,13 +85,13 @@ public class CrearDatos extends HttpServlet {
             Comentario com1 = new Comentario();
             com1.setUsuario(comentarista);
             com1.setPublicacion(pubInf);
-            com1.setContenido("¡Me encanta Granada! Buena elección.");
+            com1.setContenido("Muy interesante");
             sc.create(com1);
 
             Comentario com2 = new Comentario();
             com2.setUsuario(comentarista);
             com2.setPublicacion(pubPro);
-            com2.setContenido("Esa caminata suena como una buena aventura.");
+            com2.setContenido("Me gusta mucho la idea");
             sc.create(com2);
         } else {
             System.out.println("La base de datos ya contiene datos. No se ejecutará el código.");

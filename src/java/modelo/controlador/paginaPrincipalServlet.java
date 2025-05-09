@@ -15,6 +15,10 @@ import java.io.IOException;
 import java.util.List;
 import modelo.entidades.Comentario;
 
+/**
+ *
+ * @author sonic
+ */
 @WebServlet(name= "PaginaPrincipal", urlPatterns = {"/pagina-principal"})
 public class paginaPrincipalServlet extends HttpServlet {
 
@@ -49,7 +53,7 @@ public class paginaPrincipalServlet extends HttpServlet {
                 Comentarios = queryOp.getResultList();
 
             request.setAttribute("publicaciones", publicaciones);
-            request.setAttribute("Comentarios", Comentarios);
+            request.setAttribute("comentarios", Comentarios);
             request.getRequestDispatcher("paginaPrincipal.jsp").forward(request, response);
         } finally {
             em.close();

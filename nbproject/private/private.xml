@@ -3,9 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/sonic/Downloads/PI_DavidBejarano/src/java/prueba/CrearDatos.java</file>
+            <file>file:/C:/Users/sonic/Downloads/PI_DavidBejarano/web/css/crearPublicacion.css</file>
+            <file>file:/C:/Users/sonic/Downloads/PI_DavidBejarano/web/css/index.css</file>
+            <file>file:/C:/Users/sonic/Downloads/PI_DavidBejarano/web/crearPublicacion.jsp</file>
+            <file>file:/C:/Users/sonic/Downloads/PI_DavidBejarano/src/java/modelo/controlador/CrearPublicacionServlet.java</file>
+            <file>file:/C:/Users/sonic/Downloads/PI_DavidBejarano/src/java/modelo/controlador/paginaPrincipalServlet.java</file>
             <file>file:/C:/Users/sonic/Downloads/PI_DavidBejarano/web/paginaPrincipal.jsp</file>
-            <file>file:/C:/Users/sonic/Downloads/PI_DavidBejarano/web/index.html</file>
+            <file>file:/C:/Users/sonic/Downloads/PI_DavidBejarano/src/java/prueba/CrearDatos.java</file>
+            <file>file:/C:/Users/sonic/Downloads/PI_DavidBejarano/src/java/modelo/controlador/RegistroServlet.java</file>
+            <file>file:/C:/Users/sonic/Downloads/PI_DavidBejarano/src/java/modelo/entidades/Comentario.java</file>
+            <file>file:/C:/Users/sonic/Downloads/PI_DavidBejarano/src/java/modelo/entidades/Publicacion.java</file>
+            <file>file:/C:/Users/sonic/Downloads/PI_DavidBejarano/src/java/modelo/entidades/Usuario.java</file>
+            <file>file:/C:/Users/sonic/Downloads/PI_DavidBejarano/src/java/modelo/controlador/CrearComentarioServlet.java</file>
         </group>
     </open-files>
 </project-private>

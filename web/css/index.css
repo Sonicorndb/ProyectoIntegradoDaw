@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E6E6E6; /* Gris claro */
+    text-align: center;
+    padding: 20px;
+}
+
+.publicacion {
+    text-align: center;
+    border: 1px solid #ccc;
+    width: 80%;
+    padding: 1em;
+    margin: 1em auto;
+    background-color: #FFFFFF; /* Fondo blanco */
+    border-radius: 8px;
+}
+
+h1 {
+    color: #4C4C4C; /* Gris oscuro */
+    font-size: 28px;
+}
+
+h2 {
+    color: #20B2AA; /* Turquesa principal */
+    font-size: 22px;
+}
+
+a {
+    background-color: #F4A300; /* Amarillo anaranjado */
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    background-color: #990000; /* Más oscuro para hover */
+}
+
+.admin {
+    background-color: #F4A300; /* Amarillo anaranjado */
+}
+
+.admin:hover {
+    background-color: #cc8400; /* Variante hover */
+}
+
+button {
+    background-color: #20B2AA; /* Turquesa */
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1a908a; /* Oscurecido para hover */
+}
+
+#botonJuego {
+    padding: 15px 40px;
+    font-size: 20px;
+    background-color: #28A745; /* Verde brillante */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 15px;
+}
+
+.content {
+    padding: 20px;
+}
+
+.comentarios {
+    margin-left: 1em;
+    padding-left: 1em;
+    border-left: 2px solid #ccc;
+    text-align: left;
+}
+
+#fecha, #autor {
+    font-size: 0.75rem;
+    font-weight: 300;         
+    color: #777;
+    text-align: end;
+    margin-right: 20px
+}
+
+#fecha{
+    margin-top: 30px;
+}
+
