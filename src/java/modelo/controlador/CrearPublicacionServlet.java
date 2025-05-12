@@ -67,7 +67,7 @@ public class CrearPublicacionServlet extends HttpServlet {
 
             if (!fileName.endsWith(".zip")) {
                 request.setAttribute("error", "El archivo debe estar comprimido en formato .zip");
-                request.getRequestDispatcher("crearExperiencia.jsp").forward(request, response);
+                request.getRequestDispatcher("crearPublicacion.jsp").forward(request, response);
                 return;
             }
 
@@ -75,12 +75,12 @@ public class CrearPublicacionServlet extends HttpServlet {
             String nombreSinExtension = fileName.substring(0, fileName.lastIndexOf('.'));
             if (!nombreSinExtension.equalsIgnoreCase(titulo)) {
                 request.setAttribute("error", "El nombre del archivo ZIP debe coincidir con el título del proyecto.");
-                request.getRequestDispatcher("crearExperiencia.jsp").forward(request, response);
+                request.getRequestDispatcher("crearPublicacion.jsp").forward(request, response);
                 return;
             }
 
             // Ruta de guardado
-            String rutaBase = getServletContext().getRealPath("/web/projects/");
+            String rutaBase = getServletContext().getRealPath("/web/proyects/");
             String rutaDestino = rutaBase + File.separator + titulo;
             File carpetaDestino = new File(rutaDestino);
             carpetaDestino.mkdirs();
@@ -96,7 +96,7 @@ public class CrearPublicacionServlet extends HttpServlet {
                 }
             }
 
-            publicacion.setRuta("projects/" + titulo);
+            publicacion.setRuta("proyects/" + titulo);
         }
 
         // Persistencia

@@ -63,7 +63,7 @@
                     </c:when>
                     <c:otherwise>
                         <c:if test="${usuario != null}">
-                            <button id="botonJuego_${pub.id}" onclick="toggleJuego('${pub.id}', 'projects/${pub.titulo}/index.html')">Jugar</button>
+                            <button id="botonJuego_${pub.id}" onclick="toggleJuego('${pub.id}', 'proyects/${pub.titulo}/index.html')">Jugar</button>
                             <div id="juegoContainer_${pub.id}" style="margin-top:20px;"></div>
                         </c:if>
                         <c:if test="${usuario == null}">
