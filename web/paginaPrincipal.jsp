@@ -63,7 +63,7 @@
                     </c:when>
                     <c:otherwise>
                         <c:if test="${usuario != null}">
-                            <button id="botonJuego_${pub.id}" onclick="toggleJuego('${pub.id}', 'proyects/${pub.titulo}/index.html')">Jugar</button>
+                            <button id="botonJuego_${pub.id}" onclick="toggleJuego('${pub.id}', 'projects/${pub.titulo}/index.html')">Jugar</button>
                             <div id="juegoContainer_${pub.id}" style="margin-top:20px;"></div>
                         </c:if>
                         <c:if test="${usuario == null}">
@@ -116,9 +116,18 @@
     function toggleJuego(pubId, rutaJuego) {
         const contenedor = document.getElementById("juegoContainer_" + pubId);
         const boton = document.getElementById("botonJuego_" + pubId);
+        
+        console.log(rutaJuego);
 
         if (!juegosActivos[pubId]) {
-            contenedor.innerHTML = `<iframe src="${rutaJuego}" width="100%" height="650px" style="border:none;"></iframe>`;
+                const iframe = document.createElement('iframe');
+                iframe.src = rutaJuego; 
+                iframe.width = '100%';
+                iframe.height = '650px';
+                iframe.style.border = 'none';
+                //vaciamos el contenido del contenedor y añadimos el iframe
+                contenedor.innerHTML = '';    
+                contenedor.appendChild(iframe);
             boton.textContent = "Cerrar juego";
             juegosActivos[pubId] = true;
         } else {
