@@ -66,7 +66,7 @@ public class CrearComentarioServlet extends HttpServlet {
             comentario.setPublicacion(publicacion);
 
             // Persistencia
-            em.persist(publicacion);
+            em.persist(comentario);
             em.getTransaction().commit();
             em.close();
 
