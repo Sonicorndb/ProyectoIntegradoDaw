@@ -101,10 +101,19 @@ public class CrearPublicacionServlet extends HttpServlet {
 
         // Persistencia
         EntityManager em = emf.createEntityManager();
-        em.getTransaction().begin();
-        em.persist(publicacion);
-        em.getTransaction().commit();
-        em.close();
+        try {
+            em.getTransaction().begin();
+            em.persist(publicacion);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            request.setAttribute("error", "Error al guardar la publicación.");
+            request.getRequestDispatcher("crearPublicacion.jsp").forward(request, response);
+            return;
+        } finally {
+            em.close();
+        }
+
 
         response.sendRedirect("pagina-principal");
     }

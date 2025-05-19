@@ -30,7 +30,7 @@
 
             <div id="archivos" style="display: none;">
                 <label for="carpeta">Carpeta del proyecto:</label>
-                <input type="file" name="carpeta" id="carpeta" accept=".zip" required><br><br>
+                <input type="file" name="carpeta" id="carpeta" accept=".zip" ><br><br>
             </div>
 
             <button type="submit">Crear</button>

@@ -30,7 +30,7 @@
         </div>
         
         <p>Si no tienes una cuenta <a href="registro.jsp">registrate aquí</a></p>
-        
+    
         <h2 class="mensajeError"></h2>
     </body>
 </html>
