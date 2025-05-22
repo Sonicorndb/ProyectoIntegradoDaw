@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <title>Crear publicación</title>
     <link rel="stylesheet" href="css/crearPublicacion.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+    <p>
+        <a class="botonVolver" href="pagina-principal">Volver</a>
+    </p>
+    
     <h2>Crear nueva publicación</h2>
     
-    <c:if test = "${not empty error}">
-        <div class="error">${error}</div>
-    </c:if>
     <div class="contenedorForm">
         <form action="crearPublicacion" method="post" enctype="multipart/form-data">
             <label for="titulo">Título:</label>

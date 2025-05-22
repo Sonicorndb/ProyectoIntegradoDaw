@@ -28,7 +28,6 @@ public class CrearComentarioServlet extends HttpServlet {
     private static final String PERSISTENCE_UNIT_NAME = "PI";
     private static EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
     
-    
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

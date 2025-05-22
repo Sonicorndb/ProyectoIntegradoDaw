@@ -6,6 +6,23 @@ body {
     text-align: center;
 }
 
+.botonVolver{
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 16px;
+    background-color: #ff9900;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    width: 100px;
+}
+
+.botonVolver:hover {
+    background-color: #cc7a00;
+}
+
 h2 {
     color: #1fb3b3;
     margin-top: 30px;
@@ -82,3 +99,4 @@ button[type="submit"]:hover {
     margin: 10px auto;
     font-weight: bold;
 }
+
