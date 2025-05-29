@@ -102,7 +102,7 @@
                     <form action="CrearComentarioServlet" method="post" class="form-comentario">
                         <input type="hidden" name="idPublicacion" value="${pub.id}" />
                         <textarea name="contenido" placeholder="Escribe un comentario" required></textarea>
-                        <button type="submit">Comentar</button>
+                        <button type="submit" class="botonComentar">Comentar</button>
                     </form>
                 </c:if>
             </div>
