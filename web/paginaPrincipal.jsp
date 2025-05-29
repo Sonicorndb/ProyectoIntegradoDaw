@@ -59,7 +59,9 @@
             <div class="content">
                 <c:choose>
                     <c:when test="${pub.tipo}">
-                        <strong>Contenido:</strong> ${pub.contenido}
+                        <div class="contenido">
+                            <strong>Contenido:</strong> ${pub.contenido}
+                        </div>
                     </c:when>
                     <c:otherwise>
                         <c:if test="${usuario != null}">

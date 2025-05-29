@@ -80,7 +80,7 @@ public class CrearPublicacionServlet extends HttpServlet {
             }
 
             // Ruta de guardado
-            String rutaBase = getServletContext().getRealPath("/proyects/");
+            String rutaBase = getServletContext().getRealPath("/web/proyects/");
             String rutaDestino = rutaBase + File.separator + titulo;
             File carpetaDestino = new File(rutaDestino);
             carpetaDestino.mkdirs();
@@ -95,11 +95,6 @@ public class CrearPublicacionServlet extends HttpServlet {
                     os.write(buffer, 0, bytesRead);
                 }
             }
-            
-            ////////////
-            System.out.println("Ruta de guardado: " + archivoZip.getAbsolutePath());
-            System.out.println("Archivo existe después de guardar: " + archivoZip.exists());
-            ////////////
 
             publicacion.setRuta("proyects/" + titulo);
         }

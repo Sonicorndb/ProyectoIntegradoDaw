@@ -13,7 +13,7 @@
     <h2>Registro de nuevo usuario</h2>
 
     <div class="contenedorForm">
-        <form id="registroForm" action="registroServlet" method="post" onsubmit="return validarFormulario()" novalidate>
+        <form id="registroForm" action="registroServlet" method="post" onsubmit="return validarFormulario()">
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre">
 

@@ -81,7 +81,19 @@ button:hover {
 }
 
 .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
+}
+
+.contenido {
+    width: 70%;
+    max-width: 1000px; 
+    overflow-wrap: break-word;
+    word-wrap: break-word;     
+    overflow: auto;
 }
 
 .comentarios {
@@ -90,6 +102,43 @@ button:hover {
     border-left: 2px solid #ccc;
     text-align: left;
 }
+
+.form-comentario {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.form-comentario textarea {
+    flex: 1;
+    resize: vertical;
+    min-height: 60px;
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+}
+
+.botonComentar {
+    padding: 10px 16px;
+    margin-top: 4px;
+    background-color: #20B2AA;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    height: fit-content;
+    align-self: flex-start; 
+}
+
+.botonComentar:hover {
+    background-color: #1a908a;
+}
+
 
 #fecha, #autor {
     font-size: 0.75rem;
