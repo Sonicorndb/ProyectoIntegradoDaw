@@ -115,29 +115,76 @@
 <script>
     const juegosActivos = {};
 
-    function toggleJuego(pubId, rutaJuego) {
-        const contenedor = document.getElementById("juegoContainer_" + pubId);
-        const boton = document.getElementById("botonJuego_" + pubId);
-        
-        console.log(rutaJuego);
+function toggleJuego(pubId, rutaJuego) {
+    const contenedor = document.getElementById("juegoContainer_" + pubId);
+    const boton = document.getElementById("botonJuego_" + pubId);
+    const esMovil = window.innerWidth <= 800;
 
-        if (!juegosActivos[pubId]) {
-                const iframe = document.createElement('iframe');
-                iframe.src = rutaJuego; 
-                iframe.width = '100%';
-                iframe.height = '650px';
-                iframe.style.border = 'none';
-                //vaciamos el contenido del contenedor y añadimos el iframe
-                contenedor.innerHTML = '';    
-                contenedor.appendChild(iframe);
-            boton.textContent = "Cerrar juego";
-            juegosActivos[pubId] = true;
+    // Función para salir del juego
+    const cerrarJuego = () => {
+        contenedor.innerHTML = "";
+        boton.textContent = "Jugar";
+        juegosActivos[pubId] = false;
+
+        // Eliminar historial falso si fue añadido
+        if (esMovil) {
+            history.back();
+        }
+    };
+
+    if (!juegosActivos[pubId]) {
+        const iframe = document.createElement('iframe');
+        iframe.src = rutaJuego;
+        iframe.style.border = 'none';
+        iframe.allowFullscreen = true;
+
+        if (esMovil) {
+            // Pantalla completa para móviles
+            iframe.style.position = 'fixed';
+            iframe.style.top = '0';
+            iframe.style.left = '0';
+            iframe.style.width = '100vw';
+            iframe.style.height = '100vh';
+            iframe.style.zIndex = '9999';
+            iframe.style.backgroundColor = 'white';
+            document.body.appendChild(iframe);
+
+            // Añadir una entrada al historial para interceptar "atrás"
+            history.pushState({ juego: true }, '');
+
+            // Manejar botón atrás
+            window.onpopstate = function (event) {
+                if (event.state && event.state.juego) {
+                    document.body.removeChild(iframe);
+                    cerrarJuego();
+                    window.onpopstate = null; // Restaurar comportamiento de botón atrás por defecto
+                }
+            };
+        } else {
+            // Escritorio: usar contenedor normal
+            iframe.width = '1000px';
+            iframe.height = '700px';
+            contenedor.innerHTML = '';
+            contenedor.appendChild(iframe);
+        }
+
+        boton.textContent = "Cerrar juego";
+        juegosActivos[pubId] = true;
+    } else {
+        if (esMovil) {
+            const iframe = document.querySelector("iframe[src='" + rutaJuego + "']");
+            if (iframe) {
+                document.body.removeChild(iframe);
+            }
+            history.back(); // Simula cerrar al retroceder
         } else {
             contenedor.innerHTML = "";
-            boton.textContent = "Jugar";
-            juegosActivos[pubId] = false;
         }
+        boton.textContent = "Jugar";
+        juegosActivos[pubId] = false;
     }
+}
+
 </script>
 
 
