@@ -6,6 +6,11 @@
             <file>file:/C:/Users/sonic/Downloads/PI_DavidBejarano/web/css/index.css</file>
             <file>file:/C:/Users/sonic/Downloads/PI_DavidBejarano/web/css/formulario.css</file>
             <file>file:/C:/Users/sonic/Downloads/PI_DavidBejarano/web/paginaPrincipal.jsp</file>
+            <file>file:/C:/Users/sonic/Downloads/PI_DavidBejarano/web/crearPublicacion.jsp</file>
+            <file>file:/C:/Users/sonic/Downloads/PI_DavidBejarano/src/java/modelo/controlador/CrearPublicacionServlet.java</file>
+            <file>file:/C:/Users/sonic/Downloads/PI_DavidBejarano/src/java/modelo/controlador/CrearComentarioServlet.java</file>
+            <file>file:/C:/Users/sonic/Downloads/PI_DavidBejarano/src/java/modelo/controlador/RegistroServlet.java</file>
+            <file>file:/C:/Users/sonic/Downloads/PI_DavidBejarano/src/java/modelo/controlador/paginaPrincipalServlet.java</file>
         </group>
     </open-files>
 </project-private>

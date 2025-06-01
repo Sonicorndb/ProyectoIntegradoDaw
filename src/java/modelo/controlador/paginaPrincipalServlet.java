@@ -10,15 +10,11 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 import modelo.entidades.Publicacion;
+import modelo.entidades.Comentario;
 
 import java.io.IOException;
 import java.util.List;
-import modelo.entidades.Comentario;
 
-/**
- *
- * @author sonic
- */
 @WebServlet(name= "PaginaPrincipal", urlPatterns = {"/pagina-principal"})
 public class paginaPrincipalServlet extends HttpServlet {
 
@@ -27,33 +23,36 @@ public class paginaPrincipalServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String queryParam = request.getParameter("query"); //parámetro del filtro de búsqueda
+        String queryParam = request.getParameter("query"); // parámetro del filtro de búsqueda
         List<Publicacion> publicaciones;
-        
-        List<Comentario> Comentarios;
+        List<Comentario> comentarios;
 
         EntityManager em = emf.createEntityManager();
         
         try {
             if (queryParam != null && !queryParam.trim().isEmpty()) {
-                // Filtrar publicaciones por nombre o descripción
+                // Filtrar publicaciones por nombre o descripción, ordenadas por fecha descendente
                 TypedQuery<Publicacion> query = em.createQuery(
-                    "SELECT e FROM Publicacion e WHERE LOWER(e.titulo) LIKE LOWER(:query) OR LOWER(e.descripcion) LIKE LOWER(:query)",Publicacion.class);
+                    "SELECT e FROM Publicacion e WHERE LOWER(e.titulo) LIKE LOWER(:query) ORDER BY e.fechaPublicacion DESC, e.id ASC",
+                    Publicacion.class);
                 query.setParameter("query", "%" + queryParam + "%");
                 publicaciones = query.getResultList();
             } else {
-                // Si no hay búsqueda, mostrar todas las publicaciones
+                // Mostrar todas las publicaciones ordenadas por fecha descendente
                 TypedQuery<Publicacion> query = em.createQuery(
-                    "SELECT e FROM Publicacion e", Publicacion.class);
+                    "SELECT e FROM Publicacion e ORDER BY e.fechaPublicacion DESC", 
+                    Publicacion.class);
                 publicaciones = query.getResultList();
             }
-            
+
+            // Obtener todos los comentarios (sin orden específico)
             TypedQuery<Comentario> queryOp = em.createQuery(
-                    "SELECT o FROM Comentario o", Comentario.class);
-                Comentarios = queryOp.getResultList();
+                "SELECT o FROM Comentario o", 
+                Comentario.class);
+            comentarios = queryOp.getResultList();
 
             request.setAttribute("publicaciones", publicaciones);
-            request.setAttribute("comentarios", Comentarios);
+            request.setAttribute("comentarios", comentarios);
             request.getRequestDispatcher("paginaPrincipal.jsp").forward(request, response);
         } finally {
             em.close();

@@ -6,13 +6,37 @@
 <%@page import="modelo.entidades.Comentario"%>
 <%@page import="modelo.entidades.Usuario"%>
 
+<style>
+.mensaje-exito {
+    background-color: #F4A300;
+    color: white;
+    padding: 15px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    animation: desaparecer 4s forwards;
+}
+
+@keyframes desaparecer {
+    0% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; display: none; }
+}
+</style>
+
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
-    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     
@@ -23,30 +47,49 @@
 
 
     <div class="navbar">
-    <div class="logo">VirtualWorks</div>
+        <a href="pagina-principal" class="logo"><div class="logo">VirtualWorks</div></a>
+        
+        <div class="buscador">
+            <form action="pagina-principal" method="get" class="buscador-form">
+                <input type="text" name="query" placeholder="Buscar publicaciones..." value="<%= request.getParameter("query") != null ? request.getParameter("query") : "" %>">
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
 
-    <div class="nav-links">
-        <% if (usuario != null) { %>
-            <span class="saludo">
-                <p>Bienvenido, ${usuario.getNombre()}</p>
-            </span>
+        <div class="nav-links">
+            <% if (usuario != null) { %>
+                <span class="saludo">
+                    <p>Bienvenido, ${usuario.getNombre()}</p>
+                </span>
 
-            <a href="crearPublicacion.jsp">Crear publicación</a>
-            <a href="logout">Cerrar sesión</a>
-            
-            <% if ("admin".equals(usuario.getTipo())) { %>
-                <a href="administracion" class="admin">Administración</a>
+                <a href="crearPublicacion.jsp">Crear publicación</a>
+                <a href="logout">Cerrar sesión</a>
+
+                <% if ("admin".equals(usuario.getTipo())) { %>
+                    <a href="administracion" class="admin">Administración</a>
+                <% } %>
+
+            <% } else { %>
+                <a href="login.jsp">Login</a>
+                <a href="registro.jsp">Regístrate</a>
             <% } %>
-
-        <% } else { %>
-            <a href="login.jsp">Login</a>
-            <a href="registro.jsp">Regístrate</a>
-        <% } %>
+        </div>
     </div>
-</div>
 
         
     <h1>Últimas publicaciones</h1>
+
+    <c:if test="${param.success == '1' || param.success == 'publicacion'}">
+        <div id="mensajeExito" class="mensaje-exito">
+            ¡Publicación creada correctamente!
+        </div>
+    </c:if>
+
+    <c:if test="${param.success == 'comentario'}">
+        <div id="mensajeExito" class="mensaje-exito">
+            ¡Comentario publicado correctamente!
+        </div>
+    </c:if>
 
     <c:forEach var="pub" items="${publicaciones}">
         <div class="publicacion">
@@ -184,6 +227,11 @@ function toggleJuego(pubId, rutaJuego) {
         juegosActivos[pubId] = false;
     }
 }
+
+setTimeout(() => {
+        const mensaje = document.getElementById("mensajeExito");
+        if (mensaje) mensaje.remove();
+    }, 4000);
 
 </script>
 

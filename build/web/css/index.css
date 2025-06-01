@@ -39,6 +39,14 @@ a {
     transition: background-color 0.3s;
 }
 
+.logo{
+    background-color:#1fb3b3;
+}
+
+.logo:hover{
+    background-color:#1fb3b3;
+}
+
 a:hover {
     background-color: #990000; /* Más oscuro para hover */
 }

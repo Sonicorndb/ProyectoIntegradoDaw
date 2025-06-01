@@ -16,6 +16,47 @@
     font-weight: bold;
 }
 
+.buscador {
+    flex-grow: 1 ;
+    display: flex ;
+    justify-content: center ;
+    margin: 0 20px ;
+}
+
+.buscador-form {
+    display: flex ;
+    width: 100% ;
+    max-width: 400px ;
+}
+
+.buscador-form input[type="text"] {
+    flex: 1 !important;
+    padding: 8px 12px ;
+    border: none ;
+    border-radius: 20px 0 0 20px;
+    outline: none !important;
+    font-size: 14px !important;
+    background-color: #fff;
+    color: #000 !important;
+    height: 80%;
+    float: bottom;
+}
+
+.buscador-form button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #F4A300;
+    color: white;
+    font-weight: bold;
+    border-radius: 0 20px 20px 0 ;
+    cursor: pointer;
+    transition: background-color 0.3s ;
+}
+
+.buscador-form button:hover {
+    background-color: #45a049;
+}
+
 .nav-links {
     display: flex;
     align-items: center;

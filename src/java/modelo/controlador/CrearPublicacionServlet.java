@@ -63,6 +63,11 @@ public class CrearPublicacionServlet extends HttpServlet {
             publicacion.setContenido(contenido);
         } else { // Si es proyecto
             Part carpeta = request.getPart("carpeta");
+            if (carpeta == null || carpeta.getSize() == 0 || carpeta.getSubmittedFileName() == null || carpeta.getSubmittedFileName().isEmpty()) {
+                request.setAttribute("error", "No se ha seleccionado ningún archivo ZIP.");
+                request.getRequestDispatcher("crearPublicacion.jsp").forward(request, response);
+                return;
+            }
             String fileName = Paths.get(carpeta.getSubmittedFileName()).getFileName().toString();
 
             if (!fileName.endsWith(".zip")) {
@@ -80,7 +85,7 @@ public class CrearPublicacionServlet extends HttpServlet {
             }
 
             // Ruta de guardado
-            String rutaBase = getServletContext().getRealPath("/web/proyects/");
+            String rutaBase = getServletContext().getRealPath("/proyects/");
             String rutaDestino = rutaBase + File.separator + titulo;
             File carpetaDestino = new File(rutaDestino);
             carpetaDestino.mkdirs();
@@ -88,13 +93,20 @@ public class CrearPublicacionServlet extends HttpServlet {
             // Guardar ZIP
             File archivoZip = new File(carpetaDestino, fileName);
             try (InputStream is = carpeta.getInputStream();
-                 OutputStream os = new FileOutputStream(archivoZip)) {
+                OutputStream os = new FileOutputStream(archivoZip)) {
                 byte[] buffer = new byte[1024];
                 int bytesRead;
                 while ((bytesRead = is.read(buffer)) != -1) {
                     os.write(buffer, 0, bytesRead);
                 }
-            }
+                System.out.println("Archivo guardado en: " + archivoZip.getAbsolutePath());
+            } catch (IOException e) {
+                System.err.println("Error al guardar el archivo: " + e.getMessage());
+                request.setAttribute("error", "Error al guardar el archivo ZIP.");
+                request.getRequestDispatcher("crearPublicacion.jsp").forward(request, response);
+                return;
+           }
+
 
             publicacion.setRuta("proyects/" + titulo);
         }
@@ -115,7 +127,7 @@ public class CrearPublicacionServlet extends HttpServlet {
         }
 
 
-        response.sendRedirect("pagina-principal");
+        response.sendRedirect("pagina-principal?success=publicacion");
     }
 }
 

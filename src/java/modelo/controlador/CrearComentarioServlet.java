@@ -75,6 +75,6 @@ public class CrearComentarioServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        response.sendRedirect("pagina-principal");
+        response.sendRedirect("pagina-principal?success=comentario");
     }
 }
