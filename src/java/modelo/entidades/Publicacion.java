@@ -37,7 +37,7 @@ public class Publicacion implements Serializable {
     @Column(length = 255)
     private String ruta; // Solo si es proyecto
 
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(nullable = false)
     private Date fechaPublicacion;
 

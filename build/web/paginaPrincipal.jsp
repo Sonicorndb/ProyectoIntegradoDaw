@@ -50,9 +50,14 @@
         <a href="pagina-principal" class="logo"><div class="logo">VirtualWorks</div></a>
         
         <div class="buscador">
-            <form action="pagina-principal" method="get" class="buscador-form">
-                <input type="text" name="query" placeholder="Buscar publicaciones..." value="<%= request.getParameter("query") != null ? request.getParameter("query") : "" %>">
-                <button type="submit">Buscar</button>
+            <form action="pagina-principal" method="get" class="search-form">
+                <input 
+                    type="text" 
+                    name="query" 
+                    placeholder="Buscar publicaciones..." 
+                    class="search-input"
+                />
+                <button type="submit" class="search-button">Buscar</button>
             </form>
         </div>
 

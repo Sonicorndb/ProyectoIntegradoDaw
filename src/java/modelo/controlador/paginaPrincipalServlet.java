@@ -33,7 +33,7 @@ public class paginaPrincipalServlet extends HttpServlet {
             if (queryParam != null && !queryParam.trim().isEmpty()) {
                 // Filtrar publicaciones por nombre o descripción, ordenadas por fecha descendente
                 TypedQuery<Publicacion> query = em.createQuery(
-                    "SELECT e FROM Publicacion e WHERE LOWER(e.titulo) LIKE LOWER(:query) ORDER BY e.fechaPublicacion DESC, e.id ASC",
+                    "SELECT e FROM Publicacion e WHERE LOWER(e.titulo) LIKE LOWER(:query) ORDER BY e.fechaPublicacion DESC",
                     Publicacion.class);
                 query.setParameter("query", "%" + queryParam + "%");
                 publicaciones = query.getResultList();
