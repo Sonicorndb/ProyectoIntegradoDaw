@@ -68,7 +68,7 @@ public class CrearDatos extends HttpServlet {
             pubPro.setTitulo("CaramboloVR");
             pubPro.setTipo(false); // false = proyecto
             pubPro.setContenido("");
-            pubPro.setRuta("projects/CaramboloVR");
+            pubPro.setRuta("proyects/CaramboloVR");
             pubPro.setFechaPublicacion(new Date());
             pubPro.setUsuario(creador);
             sp.create(pubPro);

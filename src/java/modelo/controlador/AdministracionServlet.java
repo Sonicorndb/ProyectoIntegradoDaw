@@ -100,6 +100,6 @@ public class AdministracionServlet extends HttpServlet {
             em.close();
         }
 
-        response.sendRedirect("administracion");
+        response.sendRedirect("administracion?exito=ok");
     }
 }
