@@ -75,7 +75,7 @@
                 <% } %>
 
             <% } else { %>
-                <a href="login.jsp">Login</a>
+                <a href="login.jsp">Inicia sesión</a>
                 <a href="registro.jsp">Regístrate</a>
             <% } %>
         </div>
@@ -108,7 +108,7 @@
                 <c:choose>
                     <c:when test="${pub.tipo}">
                         <div class="contenido">
-                            <strong>Contenido:</strong> ${pub.contenido}
+                            ${pub.contenido}
                         </div>
                     </c:when>
                     <c:otherwise>

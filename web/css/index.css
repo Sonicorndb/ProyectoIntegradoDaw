@@ -101,6 +101,7 @@ button:hover {
 .contenido {
     width: 70%;
     max-width: 1000px; 
+    font-size: 20px;
     overflow-wrap: break-word;
     word-wrap: break-word;     
     overflow: auto;

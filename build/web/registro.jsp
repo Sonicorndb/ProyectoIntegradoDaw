@@ -46,6 +46,19 @@
                 return false;
             }
 
+            // Validar nombre: letras, números, guiones bajos y espacios simples
+            const nombreRegex = /^[a-zA-Z0-9_ ]+$/;
+            if (!nombreRegex.test(nombre)) {
+                mensajeError.textContent = "El nombre solo puede contener letras, números, espacios y guiones bajos.";
+                return false;
+            }
+
+            // Evitar que el nombre sea solo espacios
+            if (nombre.replace(/[_\s]/g, '') === "") {
+                mensajeError.textContent = "El nombre no puede estar vacío o contener solo espacios o guiones bajos.";
+                return false;
+            }
+
             const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
             if (!emailRegex.test(email)) {
                 mensajeError.textContent = "Introduce un email válido.";
@@ -60,5 +73,6 @@
             return true;
         }
     </script>
+
 </body>
 </html>

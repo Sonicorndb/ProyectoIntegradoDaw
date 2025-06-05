@@ -31,7 +31,7 @@ public class Publicacion implements Serializable {
     @Column(nullable = false)
     private boolean tipo;
 
-    @Column(length = 1000)
+    @Column(length = 5000)
     private String contenido; // Solo si es informativa
 
     @Column(length = 255)

@@ -47,8 +47,8 @@ public class CrearDatos extends HttpServlet {
 
             // Usuario 2: Con publicaciones de ambos tipos
             Usuario creador = new Usuario();
-            creador.setNombre("Creador");
-            creador.setEmail("creador@gmail.com");
+            creador.setNombre("David.DB");
+            creador.setEmail("david@gmail.com");
             creador.setPassword("1234");
             creador.setTipo("normal");
             su.create(creador);
@@ -57,7 +57,11 @@ public class CrearDatos extends HttpServlet {
             Publicacion pubInf = new Publicacion();
             pubInf.setTitulo("Las nuevas tecnologías");
             pubInf.setTipo(true); // true = informativa
-            pubInf.setContenido("La importancia de las nuevas tecnologías enfocadas al desarrollo");
+            pubInf.setContenido("Es la primera vez en la historia que una innovación avanza tan rápidamente como lo han hecho las tecnologías digitales: en apenas veinte años han llegado a cerca del 50 % de la población del mundo en desarrollo, y han transformado las sociedades. Al mejorar la conectividad, la inclusión financiera, el acceso al comercio y a los servicios públicos, la tecnología puede ser un gran elemento igualador.\n" +
+"\n" +
+"En el sector de la salud, por ejemplo, las tecnologías de vanguardia que utilizan inteligencia artificial ayudan a salvar vidas, diagnosticar enfermedades y prolongar la esperanza de vida. En el ámbito de la educación, los entornos virtuales de aprendizaje y la formación a distancia han llevado los programas educativos a estudiantes que, de otro modo, quedarían excluidos. Los servicios públicos también son cada vez más accesibles y responsables gracias a sistemas que utilizan las cadenas de bloques y la burocracia es menos gravosa gracias a la ayuda de la inteligencia artificial. Los macrodatos también pueden contribuir a que las políticas y los programas sean más pertinentes y precisos.\n" +
+"\n" +
+"Sin embargo, quienes aún no están conectados siguen aislados de los beneficios de esta nueva era y quedan aún más rezagados. Muchas de las personas que se quedan atrás son mujeres, ancianos, personas con discapacidad o miembros de minorías étnicas o lingüísticas, grupos indígenas y residentes de zonas pobres o remotas. El ritmo de la conectividad se está ralentizando, e incluso invirtiendo, en algunos grupos. Por ejemplo, a nivel mundial, la proporción de mujeres que utilizan Internet es un 12 % inferior a la de los hombres. Si bien esta diferencia se redujo en la mayoría de las regiones entre 2013 y 2017, en los países menos adelantados aumentó del 30 % al 33 %.\n");
             pubInf.setRuta("");
             pubInf.setFechaPublicacion(new Date());
             pubInf.setUsuario(creador);
@@ -75,8 +79,8 @@ public class CrearDatos extends HttpServlet {
 
             // Usuario 3: Comentarista sin publicaciones
             Usuario comentarista = new Usuario();
-            comentarista.setNombre("Usuario que comenta");
-            comentarista.setEmail("coment@gmail.com");
+            comentarista.setNombre("Pepe123");
+            comentarista.setEmail("pepe@gmail.com");
             comentarista.setPassword("4321");
             comentarista.setTipo("normal");
             su.create(comentarista);

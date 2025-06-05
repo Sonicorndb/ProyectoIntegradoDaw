@@ -31,7 +31,7 @@ public class AdministracionServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         EntityManager em = emf.createEntityManager();
-        List<Usuario> usuarios = em.createQuery("SELECT u FROM Usuario u", Usuario.class).getResultList();
+        List<Usuario> usuarios = em.createQuery("SELECT u FROM Usuario u WHERE u.nombre <> 'admin'", Usuario.class).getResultList();
         request.setAttribute("usuarios", usuarios);
 
         String usuarioIdStr = request.getParameter("usuarioId");
